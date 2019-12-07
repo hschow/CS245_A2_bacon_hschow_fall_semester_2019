@@ -109,7 +109,8 @@ public class PracticeA2Test {
 
     public static void main(String[] args) {
 
-        String csvFile = "/Users/henry/IdeaProjects/245/Bacon/src/tmdb_5000_credits.csv";
+
+        String csvFile = args[0];
         BufferedReader br = null;
         String line = "";
         PracticeA2Test t = new PracticeA2Test();
