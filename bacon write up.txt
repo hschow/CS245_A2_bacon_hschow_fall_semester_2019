@@ -1,0 +1,14 @@
+﻿JSON:
+I did not use JSON.simple or any other JSON reader from online, instead I coded my own json reader class (mostly because I had spent so much time trying to figure out how json.simple worked, and I couldn’t figure it out but I find out how json files work and decided to just make my own). My JSON reader class has two main methods, one that separated the cast from the crew by substring at the indexes of “[“ and “]”, while the other method was similar but instead of “[“ and “]” it was “{“ and “}”. In both of these methods it would return String[] and the array could be any size, although I set both up to initially be of size 6 and had a third method called growArray which would double an array’s size. One weird part I had to fix, was I had to change “[Singing Voice]” to “(Singing Voice)” because otherwise the “]” would screw up my JSON reader method that split the cast from the crew.
+
+
+Film:
+My film class is because it stores the title of every film and the cast for each film.
+
+
+Actor:
+My actor class is what I used to store each actor or actress’s =information, it has a variable for its name and an array that stores all their films, the only methods in this class are addFilm which adds a film to the array of films for the actor, and growArray which grows the array of films when needed.
+
+
+Other Classes:
+Most of the work is done in PracticeA2Test. The method shortestPath which is what finds the paths from one actor to another is in this one and uses BFS first by seeing if there are any overlapping films between the two (checking immediate edges) then by going checking going through all fellow cast movies of all of there films to see if that person has any films with the other one. All the actors are stored in a HashTable array of linked lists of Actors, ie separate chaining hash tables where the nodes are from the Actor class. Other methods that are used are checkDup which just sees if that Actor already has a node made for them, and exists which is similar but the difference is checkDup also takes a film parameter so if that they can also add films to an Actor’s film array.
